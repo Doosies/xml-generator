@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/xml-generator/static/css/main.15fc088f.css",
+    "main.js": "/xml-generator/static/js/main.f652fca7.js",
+    "index.html": "/xml-generator/index.html",
+    "main.15fc088f.css.map": "/xml-generator/static/css/main.15fc088f.css.map",
+    "main.f652fca7.js.map": "/xml-generator/static/js/main.f652fca7.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.15fc088f.css",
+    "static/js/main.f652fca7.js"
+  ]
+}
