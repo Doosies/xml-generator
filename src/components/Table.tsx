@@ -8,7 +8,7 @@ export interface TTableData {
 }
 
 export interface TTableColumns {
-  render: React.ReactNode;
+  render: string;
   key: string;
 }
 
