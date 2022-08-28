@@ -3,9 +3,6 @@ import { useLocation } from "react-router";
 import Table, { TTableColumns, TTableData } from "../components/Table";
 var XMLParser = require('react-xml-parser');
 
-
-
-
 const ResultPage = () => {
   const { state: xml } = useLocation();
   const json = new XMLParser().parseFromString(xml).children[1].children[1].children;
@@ -25,14 +22,14 @@ const ResultPage = () => {
 
   const rows = useMemo(()=>{
     const r: TTableData[] = [];
-    datas.forEach( (data:any) => {
+    datas.forEach( (data:any, idx: number) => {
       const colums: TTableColumns[] = [
         {key:`ADR${data["ORD_NO"]}`, render: <span>{data["ADR"]}</span>},
         {key:`CUST_NM${data["ORD_NO"]}`, render: <span>{data["CUST_NM"]}</span>},
         {key:`MOPH_NO${data["ORD_NO"]}`, render: <span>{data["MOPH_NO"]}</span>},
         {key:`PRDT_NM${data["ORD_NO"]}`, render: <span>{data["PRDT_NM"]}</span>}
       ];
-      r.push({id: data["ORD_NO"], columns: colums});
+      r.push({id: `${data["ORD_NO"]}${idx}`, columns: colums});
     });
     return r;
   },[datas]);

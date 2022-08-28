@@ -1,4 +1,6 @@
 import React from 'react';
+import { TableWrap } from '../styles/Table.style';
+import '../styles/Table.style.ts';
 
 export interface TTableData {
   id: string;
@@ -16,9 +18,8 @@ interface TableProps {
 }
 // interface Tablle
 const Table = ({ headers, rows }: TableProps) => {
-  console.log(rows);
-  return (
-    <>
+    return (
+    <TableWrap>
       <table>
         <thead>
           <tr>
@@ -37,7 +38,7 @@ const Table = ({ headers, rows }: TableProps) => {
           ))}
         </tbody>
       </table>
-    </>
+    </TableWrap>
   );
 };
 
