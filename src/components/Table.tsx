@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { forwardRef, LegacyRef } from 'react';
 import { TableWrap } from '../styles/Table.style';
 import '../styles/Table.style.ts';
 
@@ -17,10 +17,10 @@ interface TableProps {
   rows: TTableData[];
 }
 // interface Tablle
-const Table = ({ headers, rows }: TableProps) => {
+const Table = forwardRef(({ headers, rows }: TableProps, ref: LegacyRef<HTMLTableElement>) => {
     return (
     <TableWrap>
-      <table>
+      <table id="datatable" ref={ref}>
         <thead>
           <tr>
             {headers.map(header => (
@@ -40,6 +40,6 @@ const Table = ({ headers, rows }: TableProps) => {
       </table>
     </TableWrap>
   );
-};
+});
 
 export default Table;
