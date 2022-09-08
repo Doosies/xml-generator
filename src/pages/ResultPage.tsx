@@ -7,7 +7,7 @@ import { Wrapper } from "../styles/ResultPage.syle";
 var XMLParser = require('react-xml-parser');
 
 const ids = ["CUST_NM", 'MOPH_NO',  'ADR', 'PRDT_NM'];
-const headers = [["이름", '번호', '시군', '읍면동', '상세주소', '장비']];
+const headers = [["이름", '번호', '시군', '읍면동', '도로명1', '도로명2','나머지주소', '장비']];
 
 const ResultPage = () => {
   const { state: xml } = useLocation();
@@ -20,7 +20,7 @@ const ResultPage = () => {
     navigator(-1);
   }
   const handleClickExport = () => {
-    const ws = utils.json_to_sheet(rows,{header: ['CUST_NM', 'MOPH_NO', 'ADR1', 'ADR2', 'ADR3', 'PRDT_NM']});
+    const ws = utils.json_to_sheet(rows,{header: ['CUST_NM', 'MOPH_NO', 'ADR1', 'ADR2', 'ADR3', 'ADR4','ADR5', 'PRDT_NM']});
     const wb = utils.book_new();
     
     utils.sheet_add_aoa(ws, headers )
